@@ -1,13 +1,13 @@
-#include "lists.h"
 #include <stdlib.h>
+#include "lists.h"
 
 /**
-* check_cycle - function that checks if a singly linked list has a cycle in it
-* based on Floyd’s Cycle-Finding Algorithm
-* @list: the head pointer
-*
-* Return: 0 if there is no cycle, 1 if there is a cycle
-*/
+ * check_cycle - Checks if a singly-linked list contains a cycle.
+ * @list: A singly-linked list.
+ *
+ * Return: If there is no cycle - 0.
+ *         If there is a cycle - 1.
+ */
 int check_cycle(listint_t *list)
 {
 	listint_t *turtle, *hare;
@@ -29,3 +29,4 @@ int check_cycle(listint_t *list)
 
 	return (0);
 }
+
