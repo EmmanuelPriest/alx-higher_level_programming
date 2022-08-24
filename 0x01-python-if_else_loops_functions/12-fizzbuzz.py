@@ -11,4 +11,5 @@ def fizzbuzz():
             print("Buzz")
             continue
         else:
+        if n != 100
             print("{} ".format(n), end="")
