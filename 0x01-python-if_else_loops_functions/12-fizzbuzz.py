@@ -11,4 +11,4 @@ def fizzbuzz():
             print("Buzz")
             continue
         else:
-            print(end=" $")
+            print(end=" ")
