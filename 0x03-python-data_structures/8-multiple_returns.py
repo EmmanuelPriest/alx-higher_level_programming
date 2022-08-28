@@ -3,7 +3,7 @@
 def multiple_returns(sentence):
     sentence_tuple = ()
     if len(sentence) == 0:
-        sentence_tuple = None
+        sentence_tuple = 0, None
     else:
-        (len(sentence), sentence[0])
+        len(sentence), sentence[0]
     return sentence_tuple
