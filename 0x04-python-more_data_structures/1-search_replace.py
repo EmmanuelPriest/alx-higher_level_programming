@@ -5,6 +5,4 @@ def search_replace(my_list, search, replace):
     for n in range(len(my_list)):
         if my_list[n] == search:
             new_list[n] = replace
-        else:
-            new_list = my_list[n]
     return new_list
