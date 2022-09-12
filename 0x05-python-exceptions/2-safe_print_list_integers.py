@@ -7,6 +7,6 @@ def safe_print_list_integers(my_list=[], x=0):
             print("{:d}".format(my_list[n]), end="")
             real_number += 1
         except IndexError:
-            continue
+            pass
     print("")
     return real_number
