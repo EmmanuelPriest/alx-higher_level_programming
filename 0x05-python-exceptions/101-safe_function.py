@@ -7,8 +7,8 @@ import sys
 def safe_function(fct, *args):
     try:
         func = fct(*args)
-    except Exception:
-        print("Exception: {}".format(Exception), file=sys.stderr)
+    except Exception as E:
+        print("Exception: {}".format(E), file=sys.stderr)
         return None
     else:
         return func
