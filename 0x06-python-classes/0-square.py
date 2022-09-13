@@ -4,5 +4,5 @@
 
 
 class Square:
-    def __init__(self):
-        self.square = square
+    '''The square attribute goes here'''
+    pass
