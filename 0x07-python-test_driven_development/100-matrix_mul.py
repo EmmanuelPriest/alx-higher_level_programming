@@ -44,3 +44,30 @@ def matrix_mul(m_a, m_b):
     if not all((isinstance(element, int) or isinstance(element, float))
                 for element in [number for row in m_b for number in row]):
         raise TypeError("m_b should contain only integers or floats")
+
+    if not all(len(row) == len(m_a[0]) for row in m_a):
+        raise TypeError("each row of m_a must should be of the same size")
+    if not all(len(row) == len(m_b[0]) for row in m_b):
+        raise TypeError("each row of m_b must should be of the same size")
+
+    if len(m_a[0]) != len(m_b):
+        raise ValueError("m_a and m_b can't be multiplied")
+
+    mat_a_b = []
+    for r in range(len(m_b[0])):
+        new_row = []
+        for n in range(len(m_b)):
+            new_row.append(m_b[n][r])
+        mat_a_b.append(new_row)
+
+    new_matrix = []
+    for row in m_a:
+        new_row = []
+        for col in mat_a_b:
+            mul = 0
+            for m in range(len(mat_a_b[0])):
+                mul += row[m] * col[m]
+            new_row.append(mul)
+        new_matrix.append(new_row)
+
+    return new_matrix
