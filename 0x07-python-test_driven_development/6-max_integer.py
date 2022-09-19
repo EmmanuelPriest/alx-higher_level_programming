@@ -16,3 +16,7 @@ def max_integer(list=[]):
             result = list[i]
         i += 1
     return result
+
+result = max_integer([0, 2 + 5j, -3, 4, "Hello", 3.65, True])
+print(result)
+print(max_integer([1, 3, 4, 2]))
