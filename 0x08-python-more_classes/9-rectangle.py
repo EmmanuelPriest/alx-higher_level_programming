@@ -94,7 +94,7 @@ class Rectangle:
             A new Rectangle instance
 
         '''
-        returns cls(width == height == size)
+        returns cls(size, size)
 
     def __str__(self):
         '''Returns the printed rectangle with the character "#"
