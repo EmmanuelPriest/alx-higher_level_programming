@@ -89,12 +89,10 @@ class Rectangle:
     def square(cls, size=0):
         '''Returns a new Rectangle instance
         Args:
-            size (int): The size of the square
-        Returns:
-            A new Rectangle instance
+            size (int): The size of the new Rectangle
 
         '''
-        returns cls(width == height == size)
+        returns cls(size, size)
 
     def __str__(self):
         '''Returns the printed rectangle with the character "#"
