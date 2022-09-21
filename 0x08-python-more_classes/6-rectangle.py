@@ -4,7 +4,11 @@
 
 
 class Rectangle:
-    '''Creating init method of class'''
+    '''Creating init method of class
+    Attributes:
+        number_of_instances (int): The number of Rectangle instance created
+    '''
+
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -17,7 +21,7 @@ class Rectangle:
         '''
         self.width = width
         self.height = height
-        self.number_of_instances += 1
+        type(self).number_of_instances += 1
 
     @property
     def width(self):
@@ -88,6 +92,6 @@ class Rectangle:
         '''Returns a string when an instance of Rectangle is deleted
 
         '''
-        self.number_of_instances -= 1
+        type(self).number_of_instances -= 1
         del self.__height
         print("Bye rectangle...")
