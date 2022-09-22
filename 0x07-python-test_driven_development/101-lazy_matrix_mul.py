@@ -13,5 +13,5 @@ def lazy_matrix_mul(m_a, m_b):
 
     '''
 
-    tan = np.dot(m_a, m_b)
+    tan = np.matmul(m_a, m_b)
     return tan
