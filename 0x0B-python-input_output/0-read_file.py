@@ -10,6 +10,6 @@ def read_file(filename=""):
         filename (str): The file to be read
 
     '''
-    with open("filename=my_file_0.txt", encoding="utf-8") as f:
+    with open("my_file_0.txt", encoding="utf-8") as f:
         read_file = f.read()
         print(read_file)
