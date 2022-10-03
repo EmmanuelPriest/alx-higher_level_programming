@@ -64,7 +64,7 @@ class Base:
                 nof.write(Base.to_json_string(list_of_dicts))
 
     @staticmethod
-    from_json_string(json_string):
+    def from_json_string(json_string):
         '''Returns the deserialization of a list of JSON string
 
         Args:
@@ -151,14 +151,14 @@ class Base:
                 if cls.__name__ == "Rectangle":
                     rec_instances = ["id", "width", "height", "x", "y"]
                 else:
-                    sq_instances = ["id", size"", "x", "y"]
+                    sq_instances = ["id", "size", "x", "y"]
                     list_of_dicts = csv.DictReader(nof,
                                                    rec_instances=sq_instances)
                     list_of_dicts = [dict([key, int(value)]
                                      for key, value in d.items())
                                      for d in list_of_dicts]
                     return [cls.create(**d) for d in list_of_dicts]
-        export IOError:
+        except IOError:
             return []
 
     @staticmethod
@@ -189,7 +189,7 @@ class Base:
             turt.hideturtle()
 
         turt.color("#b5e3d8")
-        for square inn list_squares:
+        for square in list_squares:
             turt.showturtle()
             turt.up()
             turt.goto(square.x, square.y)
