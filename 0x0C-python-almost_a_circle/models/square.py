@@ -1,76 +1,73 @@
 #!/usr/bin/python3
 
-'''Defines class Square'''
+'''Defines a square class'''
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    '''class Square that inherits from class Rectangle'''
+    '''Represent a square'''
 
     def __init__(self, size, x=0, y=0, id=None):
-        '''Initializes the init method of class Square
+        '''Initialize a new Square.
 
         Args:
-            size (int): The size of the Square
-            x (int): The x coordinate of the Square
-            y (int): The y coordinate of the Square
-            id (int): The identity of the Square
-
+            size (int): The size of the new Square.
+            x (int): The x coordinate of the new Square.
+            y (int): The y coordinate of the new Square.
+            id (int): The identity of the new Square.
         '''
-        super().__int__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        '''Getter of the size of the Square'''
+        '''Get/set the size of the Square'''
         return self.width
 
     @size.setter
     def size(self, value):
-        '''Setter of the size of the Square'''
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        '''Updating of the Square
+        '''Update the Square.
 
         Args:
-            *args (ints): List of arguments
-                - 1st argument should be the id attribute
-                - 2nd argument should be the size attribute
-                - 3rd argument should be the x attribute
-                - 4th argument should be the y attribute
-            **kwargs (dict): Key/value pairs of attributes
-
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents size attribute
+                - 3rd argument represents x attribute
+                - 4th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
         '''
         if args and len(args) != 0:
-            n = 0
+            a = 0
             for arg in args:
-                if n == 0:
+                if a == 0:
                     if arg is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
                         self.id = arg
-                elif n == 1:
+                elif a == 1:
                     self.size = arg
-                elif n == 2:
+                elif a == 2:
                     self.x = arg
-                elif n == 3:
+                elif a == 3:
                     self.y = arg
-                n += 1
+                a += 1
 
         elif kwargs and len(kwargs) != 0:
-            for key, value in kwargs.items():
-                if key == "id":
-                    if value is None:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
                         self.__init__(self.size, self.x, self.y)
                     else:
-                        self.id = value
-                elif key == "size":
-                    self.size = value
-                elif key == "x":
-                    self.x = value
-                elif key == "y":
-                    self.y = value
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v
 
     def to_dictionary(self):
         '''Return the dictionary representation of the Square'''
@@ -82,5 +79,6 @@ class Square(Rectangle):
         }
 
     def __str__(self):
-        '''Return the print() and str() representation of the Square'''
-        return (f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}")
+        '''Return the print() and str() representation of a Square'''
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
