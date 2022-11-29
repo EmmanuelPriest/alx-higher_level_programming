@@ -6,7 +6,7 @@ class Rectangle {
   constructor (w, h) {
     this.width = w;
     this.height = h;
-    if (w === 0 || h === 0) {
+    if (width === 0 || height === 0) {
       const emptyObj = new Rectangle();
     }
   }
