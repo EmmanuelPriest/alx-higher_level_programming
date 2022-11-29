@@ -1,6 +1,7 @@
 #!/usr/bin/node
 
-/* Defines a rectangle class that creates instance methods rotate()
+/* 
+ * Defines a rectangle class that creates instance methods rotate()
  * and double()
  */
 
