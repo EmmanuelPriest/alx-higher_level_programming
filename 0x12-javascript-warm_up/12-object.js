@@ -6,6 +6,6 @@ const myObject = {
 };
 console.log(myObject);
 
-elementIndex = myObject.findIndex((obj => obj.type === 'object'));
+const elementIndex = myObject.findIndex((obj => obj.type === 'object'));
 myObject[elementIndex].value = 89;
 console.log(myObject);
