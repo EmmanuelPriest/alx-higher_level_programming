@@ -6,9 +6,9 @@ if (!parseInt(x)) {
 } else {
   for (let n = 0; n < x; n++) {
     /* let m = 0; */
-    /* let mySquare = ''; */
+    let mySquare = '';
     for (let m = 0; m < x; m++) {
-      let mySquare += 'X';
+      mySquare += 'X';
     }
     console.log(mySquare);
   }
