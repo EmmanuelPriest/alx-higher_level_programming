@@ -1,6 +1,8 @@
 #!/usr/bin/node
 
-/* Defines a rectangle class that creates an instance method print() */
+/* Defines a rectangle class that creates instance methods rotate()
+ * and double()
+ */
 
 class Rectangle {
   constructor (w, h) {
@@ -27,8 +29,8 @@ class Rectangle {
   }
 
   double () {
-    let wid = this.width * 2;
-    let ht = this.height * 2;
+    this.width = this.width * 2;
+    this.height = this.height * 2;
   }
 }
 
