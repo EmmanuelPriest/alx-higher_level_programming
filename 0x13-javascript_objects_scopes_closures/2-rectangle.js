@@ -4,10 +4,9 @@
 
 class Rectangle {
   constructor (w, h) {
-    this.width = w;
-    this.height = h;
-    if (width === 0 || height === 0) {
-      const emptyObj = new Rectangle();
+    if (typeof w === 'number' && w > 0 && typeof h === 'number' && h > 0) {
+      this.width = w;
+      this.height = h;
     }
   }
 }
