@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* Defines a rectangle */
+/* Defines a rectangle class that has width and height attributes */
 
 class Rectangle {
   constructor(w, h) {
@@ -8,5 +8,4 @@ class Rectangle {
     this.height = h;
   }
 }
-
 module.exports = Rectangle;
