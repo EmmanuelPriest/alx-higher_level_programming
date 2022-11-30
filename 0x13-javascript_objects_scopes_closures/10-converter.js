@@ -2,5 +2,5 @@
 
 /* convert from base 10 to other bases */
 exports.converter = function (base) {
-  console.log(base.toString());
+  console.log(decimal.toString(base));
 };
