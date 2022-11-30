@@ -8,4 +8,4 @@ exports.esrever = function (list) {
     newList.push(list[n]);
   }
   return (newList);
-}
+};
