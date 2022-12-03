@@ -20,8 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=create_engine)
     create_sess = Session()
 
-    state_city = create_sess.query(State).outerjoin(City). \
-        order_by(State.id, City.id).all()
+    state_city = create_sess.query(State).outerjoin(City).
+    order_by(State.id, City.id).all()
 
     for state in state_city:
         print("{}: {}".format(state.id, state.name))
