@@ -14,4 +14,4 @@ if __name__ == "__main__":
     states = current.fetchall()
 
     for state in states:
-        print("{}".format(state))
+        print(state)
