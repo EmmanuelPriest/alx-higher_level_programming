@@ -19,5 +19,7 @@ if __name__ == "__main__":
 
     states = create_sess.query(State).order_by(State.id).first()
 
-    for state in states:
+    if not states:
+        print("Nothing")
+    else:
         print("{}: {}".format(state.id, state.name))
