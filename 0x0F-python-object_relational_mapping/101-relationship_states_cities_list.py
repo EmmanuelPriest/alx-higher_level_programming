@@ -15,7 +15,7 @@ if __name__ == "__main__":
     create_engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                                   format(sys.argv[1], sys.argv[2],
                                          sys.argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(create_engine)
+    Base.meta_data.create_all(create_engine)
 
     Session = sessionmaker(bind=create_engine)
     create_sess = Session()
