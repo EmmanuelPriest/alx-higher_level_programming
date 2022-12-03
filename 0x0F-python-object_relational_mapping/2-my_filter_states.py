@@ -8,7 +8,7 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    database = MySQLdb.connect(user=sys.argv[1], passwd=sys.agv[2],
+    database = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2],
                                database=sys.argv[3], port=3306)
 
     current = database.cursor()
