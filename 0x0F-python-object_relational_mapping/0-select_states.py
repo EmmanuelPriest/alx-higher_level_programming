@@ -11,7 +11,7 @@ f __name__ == "__main__":
 
     current = database.cursor()
     current.execute("SELECT * FROM states;")
-    selected_states = current.fetchall()
+    states = current.fetchall()
 
-    for state in selected_states:
+    for state in states:
         print("{}".format(state))
