@@ -12,8 +12,8 @@ if __name__ == "__main__":
                                database=sys.argv[3], port=3306)
 
     current = database.cursor()
-    current.execute("SELECT cities.id, cities.name, states.name FROM cities
-                    JOIN states ON cities.state_id = states.id WHERE
+    current.execute("SELECT cities.id, cities.name, states.name FROM cities \
+                    JOIN states ON cities.state_id = states.id WHERE \
                     states.name = '{}';".format(sys.argv[4]))
     states = current.fetchall()
 
