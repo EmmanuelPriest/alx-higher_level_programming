@@ -17,4 +17,4 @@ if __name__ == "__main__":
                     states.name = '{}';".format(sys.argv[4]))
     states = current.fetchall()
 
-    print("{}".format(", ".join([state[1] for state in states])))
+    print(f'", ".join([state[1] for state in states])')
