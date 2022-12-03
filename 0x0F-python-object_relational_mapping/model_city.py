@@ -10,7 +10,6 @@ from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 
 
-
 class City(Base):
     '''Defines class City that inherits from class Base'''
     __tablename__ = "cities"
