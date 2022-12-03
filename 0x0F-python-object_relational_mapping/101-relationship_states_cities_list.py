@@ -12,12 +12,12 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
-    create_engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
+    createEngine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                                   format(sys.argv[1], sys.argv[2],
                                          sys.argv[3]), pool_pre_ping=True)
-    Base.meta_data.create_all(create_engine)
+    Base.metadata.create_all(createEngine)
 
-    Session = sessionmaker(bind=create_engine)
+    Session = sessionmaker(bind=createEngine)
     create_sess = Session()
 
     state_city = create_sess.query(State).outerjoin(City).
