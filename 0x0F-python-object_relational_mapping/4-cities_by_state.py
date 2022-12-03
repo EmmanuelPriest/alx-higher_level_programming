@@ -13,5 +13,5 @@ if __name__ == "__main__":
                     JOIN states ON cities.state_id = states.id;")
     states = current.fetchall()
 
-    for state in state:
+    for state in states:
         print("{}".format(state))
