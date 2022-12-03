@@ -6,12 +6,12 @@ import MySQLdb
 
 
 if __name__ == "__main__":
-    database MySQLdb.connect(user=sys.argv1[1], passwd=sys.argv[2],
+    database = MySQLdb.connect(user=sys.argv1[1], passwd=sys.argv[2],
                              database=sys.argv[3], port=3306)
 
     current = database.cursor()
     current.execute("SELECT * FROM states;")
-    states = current.fetchall()
+    selected_states = current.fetchall()
 
-    for state in states:
-        print(state)
+    for state in selected_states:
+        print("{}".format(state))
