@@ -8,7 +8,7 @@ import sys
 from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from sqlalchemy.schema import Table
 
 
@@ -18,8 +18,7 @@ if __name__ == "__main__":
                                         sys.argv[3]), pool_pre_ping=True)
     Base.metadata.create_all(createEngine)
 
-    Session = sessionmaker(bind=createEngine)
-    create_sess = Session()
+    create_sess = Session(createEngine)
 
     state_city = create_sess.query(State).order_by(State.id).all()
 
