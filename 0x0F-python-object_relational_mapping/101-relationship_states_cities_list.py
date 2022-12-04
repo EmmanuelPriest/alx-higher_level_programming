@@ -9,6 +9,7 @@ from relationship_state import Base, State
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.schema import Table
 
 
 if __name__ == "__main__":
@@ -20,10 +21,10 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=createEngine)
     create_sess = Session()
 
-    state_city = create_sess.query(State).outerjoin(City).order_by
-    (State.id, City.id).all()
+    state_city = create_sess.query(State).order_by(State.id).all()
 
     for state in state_city:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
+    create_sess.close()
