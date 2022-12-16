@@ -9,20 +9,24 @@ def find_peak(list_of_integers):
     Args:
         list_of_integers (list): List of integers to find a peak from
     '''
-    if list_of_integers is None or list_of_integers == []:
+    low = len(list_of_integers)
+    high = low
+    middle = low // 2
+
+    if low == 0:
         return None
-    low = 0
-    high = len(list_of_integers)
-    middle = ((high - low) // 2) + low
-    middle = int(middle)
-    if high == 1:
-        return list_of_integers[0]
-    if high == 2:
-        return max(list_of_integers)
-    if list_of_integers[middle] >= list_of_integers[middle - 1]\
-            and list_of_integers[middle] >= list_of_integers[middle + 1]:
-        return list_of_integers[middle]
-    if middle > 0 and list_of_integers[middle] < list_of_integers[middle + 1]:
-        return find_peak(list_of_integers[middle:])
-    if middle > 0 and list_of_integers[middle] < list_of_integers[middle - 1]:
-        return find_peak(list_of_integers[:middle])
+
+    while True:
+        high //= 2
+        if (middle < low - 1 and
+                list_of_integers[middle] < list_of_integers[middle + 1]):
+            if high // 2 == 0:
+                high = 2
+            middle = middle + high // 2
+        elif high > 0 and list_of_integers[middle] <\
+                list_of_integers[middle - 1]:
+            if high // 2 == 0:
+                high = 2
+            middle = middle - high // 2
+        else:
+            return list_of_integers[middle]
