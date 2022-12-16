@@ -16,7 +16,7 @@ if __name__ == "__main__":
     commits = req.json()
     try:
         for n in range(10):
-            print(f"{commits[n].get("sha")}: {commits[n].get("commit").\
-                    get("author").get("name")}")
+            print("{}: {}".format(commits[n].get("sha"),
+                  commits[n].get("commit").get("author").get("name")))
     except IndexError:
         pass
