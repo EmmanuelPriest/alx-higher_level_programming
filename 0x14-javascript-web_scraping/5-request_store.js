@@ -7,16 +7,17 @@ const request = require('request');
 const fs = require('fs');
 const requestUrl = process.argv[2];
 const filePath = process.argv[3];
-// const encoding = 'utf-8';
+const encoding = 'utf8';
 
 request(requestUrl, (error, res, body) => {
   if (error) {
-    return console.error(error);
+    console.log(error);
+  } else {
+    fs.writeFile(filePath, body, encoding, (writeError) => {
+      if (writeError) {
+        console.log(writeError);
+      }
+      console.log(`${filePath}`);
+    });
   }
-  fs.writeFile(filePath, body, { encoding: 'utf-8' }, (writeError) => {
-    if (writeError) {
-      return console.error(writeError);
-    }
-    console.log(`${filePath}`);
-  });
 });
