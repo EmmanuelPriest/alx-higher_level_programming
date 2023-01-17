@@ -11,8 +11,7 @@ const encoding = 'utf-8';
 
 fs.readFile(path.resolve(filePath), encoding, (err, data) => {
   if (err) {
-    console.error(err);
-    return;
+    return console.error(err);
   }
   console.log(data);
 });
