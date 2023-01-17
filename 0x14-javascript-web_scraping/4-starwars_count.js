@@ -4,7 +4,8 @@ Script that prints the number of movies where the character “Wedge Antilles”
 */
 
 const request = require('request');
-const starWarsApiUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const starWarsApiUrl = process.argv[2];
+// const starWarsApiUrl = 'https://swapi-api.alx-tools.com/api/films/';
 const characterId = 18;
 
 let movieCounter = 0;
