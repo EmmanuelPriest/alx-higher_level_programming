@@ -8,7 +8,7 @@ const userApiUrl = process.argv[2];
 
 const userCompletedTask = {};
 
-request(userApiUrl, (error, res, body) => {
+request.get(userApiUrl, (error, res, body) => {
   if (error) {
     return console.error(error);
   }
@@ -21,8 +21,5 @@ request(userApiUrl, (error, res, body) => {
       userCompletedTask[task.userId] += 1;
     }
   });
-
-  for (const userId in userCompletedTask) {
-    console.log(`'${userId}': ${userCompletedTask[userId]}`);
-  }
+  console.log(userCompletedTask);
 });
